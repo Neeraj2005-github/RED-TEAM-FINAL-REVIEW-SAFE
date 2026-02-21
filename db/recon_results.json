@@ -1,0 +1,18 @@
+{
+  "dns": {
+    "A": [],
+    "MX": [],
+    "NS": [],
+    "TXT": []
+  },
+  "whois": {
+    "registrar": null,
+    "creation_date": null,
+    "expiration_date": null,
+    "emails": "abuse@iana.org",
+    "org": null
+  },
+  "subdomains": [],
+  "shodan": {},
+  "timestamp": "2026-02-21T19:09:02.770872"
+}

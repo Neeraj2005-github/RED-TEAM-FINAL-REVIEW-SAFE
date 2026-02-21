@@ -1,0 +1,111 @@
+# ──────────────────────────────────────────────────────────────────────
+# AI Red Team Framework — Master Configuration
+# ──────────────────────────────────────────────────────────────────────
+# Environment variables override any value here.
+# Format: REDTEAM_<SECTION>_<KEY>=value   (case-insensitive)
+# Example: REDTEAM_GENERAL_TARGET=10.0.0.5
+# CLI arguments override environment variables.
+# ──────────────────────────────────────────────────────────────────────
+
+general:
+  target: "192.168.1.1"
+  output_dir: "reports"
+  log_level: "INFO"            # DEBUG, INFO, WARNING, ERROR
+  project_name: "red-team-assessment"
+  operator: "operator"
+
+# ── Security guard-rails ──────────────────────────────────────────────
+security:
+  dry_run: true                # true = no real traffic is sent
+  safe_mode: true              # true = skip destructive exploits
+  require_confirmation: true   # prompt user before live fire
+  scope_enforcement: true      # block targets outside allowed_ranges
+  allowed_ranges:
+    - "10.0.0.0/8"
+    - "172.16.0.0/12"
+    - "192.168.0.0/16"
+    - "127.0.0.0/8"
+
+# ── Scope / target exclusions ────────────────────────────────────────
+scope:
+  include_ips: []
+  exclude_ips: []
+  include_domains: []
+  exclude_domains: []
+  max_hosts: 256
+
+# ── Timeouts (seconds) ───────────────────────────────────────────────
+timeout:
+  dns_timeout: 5
+  scan_timeout: 600
+  exploit_timeout: 300
+  http_timeout: 10
+  ssh_timeout: 10
+
+# ── Reconnaissance ────────────────────────────────────────────────────
+recon:
+  dns_parallelization: 50
+  use_cache: true
+  cache_expiration: 3600       # seconds
+  subdomain_wordlist: "wordlists/subdomains_small.txt"
+  enable_whois: true
+  enable_shodan: false
+
+# ── Scanning ──────────────────────────────────────────────────────────
+scanning:
+  port_range: "1-1024"         # use "1-65535" for full range
+  scan_type: "SYN"             # SYN, CONNECT, UDP
+  rate_limit: 1000             # packets per second
+  service_detection: true      # -sV (slower but identifies services)
+  os_detection: false          # -O  (disable to save ~30-60s per host)
+  timing_template: 5           # nmap -T<n>: 3=normal, 4=aggressive, 5=insane
+
+# ── Exploitation ──────────────────────────────────────────────────────
+exploitation:
+  max_attempts: 3
+  brute_force_delay: 0.5       # seconds between attempts
+  password_wordlist: "wordlists/passwords_common.txt"
+  auto_exploit: false          # require manual confirmation
+  exploit_modules:
+    - "brute_force"
+    - "web_exploits"
+    - "cve_exploits"
+
+# ── Post-exploitation ────────────────────────────────────────────────
+post_exploitation:
+  enable_privesc: true
+  enable_lateral_movement: true
+  enable_persistence: true     # simulation only
+  enable_credential_harvest: true
+  max_pivot_depth: 2
+
+# ── Groq LLM ─────────────────────────────────────────────────────────
+groq_llm:
+  model: "llama-3.3-70b-versatile"
+  max_tokens: 2048
+  temperature: 0.3
+  api_timeout: 30
+  use_for_exploit_ranking: true
+  max_api_calls: 20
+
+# ── Reporting ─────────────────────────────────────────────────────────
+reporting:
+  formats:
+    - "html"
+    - "json"
+  include_raw_output: false
+  include_attack_graph: true
+  include_mitre_mapping: true
+  html_theme: "dark"
+
+# ── Dashboard ─────────────────────────────────────────────────────────
+dashboard:
+  enabled: false
+  host: "127.0.0.1"
+  port: 5001
+  auth_token: ""               # set via REDTEAM_DASHBOARD_AUTH_TOKEN
+
+# ── Module toggles ───────────────────────────────────────────────────
+module_settings:
+  enabled_modules: []          # empty = all enabled
+  disabled_modules: []

